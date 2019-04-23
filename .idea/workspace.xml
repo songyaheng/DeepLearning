@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="296e6968-673c-4a6a-8984-ff676e368f9b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ner/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ner/embedding_builder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ner/train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ner/vocab_builder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ner/word_embedding.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wide_deep/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wide_deep/wide_n_deep.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ner/train_test_split.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ner/word_embedding.py" beforeDir="false" afterPath="$PROJECT_DIR$/ner/word_embedding.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,26 +35,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="103" />
+          <entry key="py" value="110" />
           <entry key="pyi" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="103" />
+          <entry key="Python" value="110" />
           <entry key="PythonStub" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="8" />
-          <entry key="py" value="5818" />
+          <entry key="py" value="6163" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="5800" />
+          <entry key="Python" value="6145" />
           <entry key="SQL" value="18" />
         </counts>
       </usages-collector>
@@ -70,8 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ner/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="122" column="5" lean-forward="true" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+            <state relative-caret-position="221">
+              <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
               <folding>
                 <element signature="e#24#47#0" expanded="true" />
               </folding>
@@ -105,6 +100,8 @@
         <option value="$PROJECT_DIR$/ner/ner_train.py" />
         <option value="$PROJECT_DIR$/ner/vocab_builder.py" />
         <option value="$PROJECT_DIR$/ner/train.py" />
+        <option value="$PROJECT_DIR$/ner/train_test_split.py" />
+        <option value="$PROJECT_DIR$/ner/word_embedding.py" />
       </list>
     </option>
   </component>
@@ -115,8 +112,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1844" />
-    <option name="y" value="95" />
+    <option name="x" value="1887" />
+    <option name="y" value="90" />
     <option name="width" value="1400" />
     <option name="height" value="781" />
   </component>
@@ -139,6 +136,11 @@
               <item name="DeepLearning" type="462c0819:PsiDirectoryNode" />
               <item name="ner" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DeepLearning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DeepLearning" type="462c0819:PsiDirectoryNode" />
+              <item name="wide_deep" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -148,7 +150,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555989476299" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556017524089" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -324,15 +326,15 @@
       <workItem from="1555896777489" duration="25129000" />
       <workItem from="1555942331842" duration="4380000" />
       <workItem from="1555946924263" duration="558000" />
-      <workItem from="1555982165235" duration="3656000" />
+      <workItem from="1555982165235" duration="13311000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93264000" />
+    <option name="totallyTimeSpent" value="102919000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1844" y="95" width="1400" height="781" extended-state="0" />
+    <frame x="1887" y="90" width="1400" height="781" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17157584" />
@@ -350,7 +352,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286385" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3063063" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -429,13 +431,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py" />
     <entry file="file://$PROJECT_DIR$/ner/model.py" />
-    <entry file="file://$PROJECT_DIR$/wide_deep/wide_n_deep.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="81" column="47" lean-forward="true" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///anaconda3/lib/python3.6/site-packages/tensorflow/python/ops/gradients_impl.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
@@ -492,13 +487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ner/word_embedding.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///anaconda3/lib/python3.6/site-packages/boto/cloudsearch2/layer2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-60">
@@ -520,20 +508,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wide_deep/wide_n_deep.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ner/vocab_builder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="66" column="30" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
+        <state relative-caret-position="302">
+          <caret line="119" column="37" lean-forward="true" selection-start-line="119" selection-start-column="37" selection-end-line="119" selection-end-column="37" />
           <folding>
             <element signature="e#78#109#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ner/word_embedding.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ner/train_test_split.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ner/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="122" column="5" lean-forward="true" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+        <state relative-caret-position="221">
+          <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
           <folding>
             <element signature="e#24#47#0" expanded="true" />
           </folding>
