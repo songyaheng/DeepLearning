@@ -9,7 +9,7 @@ import sys
 MINCOUNT = 1
 
 TAGS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-INDEX = ["b", "m", "e", "s"]
+INDEX = ["b", "i", "o"]
 
 def processLine(line):
     return "".join(line.split())
@@ -73,7 +73,7 @@ if __name__ == '__main__':
                             words.append(" ".join(w_list))
                             tag = w["tag"]
                             if len(w_list) == 1:
-                                tg = "{}{}".format(tag_map[tag], INDEX[3])
+                                tg = "{}{}".format(tag_map[tag], INDEX[2])
                                 vocab_tags.add(tg)
                                 label.append(tg)
                             else:
@@ -83,7 +83,7 @@ if __name__ == '__main__':
                                         vocab_tags.add(tg)
                                         label.append(tg)
                                     elif i == len(w_list) - 1:
-                                        tg = "{}{}".format(tag_map[tag], INDEX[2])
+                                        tg = "{}{}".format(tag_map[tag], INDEX[1])
                                         vocab_tags.add(tg)
                                         label.append(tg)
                                     else:

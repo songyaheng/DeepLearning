@@ -5,6 +5,7 @@ from pathlib import Path
 import numpy as np
 import logging
 import sys
+import json
 # Logging
 Path('log').mkdir(exist_ok=True)
 tf.logging.set_verbosity(logging.INFO)
@@ -63,7 +64,8 @@ def ner_model_fn(features, labels, mode, params):
     lstm_cell_bw = tf.contrib.rnn.TimeReversedFusedRNN(lstm_cell_bw)
     output_fw, _ = lstm_cell_fw(t, dtype=tf.float32, sequence_length=nwords)
     output_bw, _ = lstm_cell_bw(t, dtype=tf.float32, sequence_length=nwords)
-    output = tf.concat([output_fw, output_bw], axis=-1)
+    # output = tf.concat([output_fw, output_bw], axis=-1)
+    output = tf.add(output_fw, output_bw)
     output = tf.transpose(output, perm=[1, 0, 2])
     output = tf.layers.dropout(output, rate=params["dropout"], training=training)
 
@@ -107,10 +109,10 @@ def ner_model_fn(features, labels, mode, params):
 
 if __name__ == '__main__':
     params = {
-        "root_path": "/Users/songyaheng/Downloads/data",
-        "words": "/Users/songyaheng/Downloads/data/vocab.words.txt",
-        "tags": "/Users/songyaheng/Downloads/data/vocab.tags.txt",
-        "embedding": "/Users/songyaheng/Downloads/data/embedding.npz",
+        "root_path": "/data/songyaheng/data",
+        "words": "/data/songyaheng/data/vocab.words.txt",
+        "tags": "/data/songyaheng/data/vocab.tags.txt",
+        "embedding": "/data/songyaheng/data/embedding.npz",
         "dim": 100,
         "batch_size": 64,
         "learning_rate": 0.001,
@@ -142,9 +144,13 @@ if __name__ == '__main__':
     with Path(params['tags']).open() as f:
         params["num_tags"] = len(f.readlines()) + 1
 
+    with Path('{}/params.json'.format(params["root_path"])).open('w') as f:
+        json.dump(params, f, indent=4, sort_keys=True)
+
     estimator = tf.estimator.Estimator(ner_model_fn, '{}/model'.format(params["root_path"]), cfg, params)
     hook = tf.contrib.estimator.stop_if_no_increase_hook(
         estimator, 'acc', 0.95, min_steps=params["train_step"], run_every_secs=120)
     train_spec = tf.estimator.TrainSpec(input_fn=train_input_fn, hooks=[hook])
     eval_spec = tf.estimator.EvalSpec(input_fn=eval_input_fn, throttle_secs=120)
     tf.estimator.train_and_evaluate(estimator, train_spec, eval_spec)
+
